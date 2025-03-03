@@ -45,7 +45,7 @@ def check_winner(game):
         if winner != 0:
             return winner
 
-    return winner
+    return 0 #(Mohammed suhayl,M01033117) changed return value to 0
 
 def start_game():
     return [[0, 0, 0] for x in range(3)]
@@ -67,7 +67,7 @@ def add_piece(game, player, row, column):
     row: 0-index row
     column: 0-index column
     """
-    game[row][column+1] = player
+    game[row][column] = player # (Mohammed suhayl, M01033117) removed +1
     return game
 
 def check_space_empty(game, row, column):
@@ -77,7 +77,7 @@ def convert_input_to_coordinate(user_input):
     return user_input - 1
 
 def switch_player(player):
-    if player = 1:
+    if player == 1: #(Mohammed suhayl, M01033117) changes = to ==
         return 2
     else:
         return 1
@@ -89,7 +89,7 @@ def moves_exist(game):
                 return True
     return False
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     game = start_game()
     display_game(game)
     player = 1
@@ -98,12 +98,12 @@ if __name__ == '__main__':
     while winner == 0 and moves_exist(game):
         print("Currently player: " + str(player))
         available = False
-        while not available
+        while not available: # (Mohammed suhayl, M01033117) added semicolon
             row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
             column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
-            available = check_space_empty(game, row)
+            available = check_space_empty(game, row, column) #(Mohammed suhayl, M01033117) Fixed missing column argument
         game = add_piece(game, player, row, column)
         display_game(game)
         player = switch_player(player)
-#        winner = check_winner(game)
+        winner = check_winner(game) # (Mohammed suhayl, M01033117) removed command symbol
     display_winner(winner)
