@@ -20,37 +20,33 @@
 # Student iis failing.
 
 exam_one = int(input("Input exam grade one: "))
+exam_two = int(input("Input exam grade two: ")) # (Mohammed suhayl, M01033117) added the missing int()
+exam_3 = int(input("Input exam grade three: ")) # ((Mohammed suhayl, M01033117) instead of str added int()
 
-exam_two = input("Input exam grade two: "))
+grades = [exam_one, exam_two, exam_3] # (Mohammed suhayl, M01033117) added missing commas and instead of three added 3
 
-exam_3 = str(input("Input exam grade three: "))
-
-grades = [exam_one exam_two exam_three]
-sum = 0
-for grade in grade:
-  sum = sum + grade
-
-avg = sum / len(grdes)
+total = sum(grades)
+avg = total / len(grades) # (Mohammed suhayl, M01033117) fixed loop errors and spelling mistakes in grades
 
 if avg >= 90:
     letter_grade = "A"
-elif avg >= 80 and avg < 90
+elif avg >= 80: # (Mohammed suhayl, M01033117) added missing semicolons
     letter_grade = "B"
-elif avg > 69 and avg < 80:
-    letter_grade = "C'
-elif avg <= 69 and avg >= 65:
+elif avg >= 70: # (Mohammed suhayl, M01033117) instead of 69 to 80 changes to 70
+    letter_grade = "C" # (Mohammed suhayl, M01033117) fixed mismatched quote
+elif avg >= 60: # (Mohammed suhayl, M01033117) instead of <= 69 and avg >= 65 changed to >=60
     letter_grade = "D"
-elif:
+else: # (Mohammed suhayl, M01033117) instead of elif changes to else
     letter_grade = "F"
 
+# Print results
 for grade in grades:
     print("Exam: " + str(grade))
 
-    print("Average: " + str(avg))
+print("Average: " + str(avg))
+print("Grade: " + letter_grade)
 
-    print("Grade: " + letter_grade)
-
-if letter-grade is "F":
-    print "Student is failing."
+if letter_grade == "F": # (Mohammed suhayl, M01033117) letter-grade is "F" should be letter_grade == "F"
+    print("Student is failing.") # (Mohammed suhayl, M01033117) print "Student is failing." should be print("Student is failing.")
 else:
-    print "Student is passing."
+    print("Student is passing.")
